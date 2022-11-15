@@ -1,0 +1,103 @@
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+	justify-content: center;
+	background-color: lightgrey;
+}
+
+.container {
+	background-color: white;
+	/* padding: 10px 20px; */
+	width: 500px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 5px;
+}
+
+.toDo {
+	width: 100%;
+}
+
+h1 {
+	margin-top: 0px;
+	text-align: center;
+}
+
+.toDoElement {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid lightgrey;
+	padding: 1em 0 1em 0;
+	margin-inline: 20px;
+}
+
+.toDoElement:last-child {
+	border-bottom: none;
+}
+
+.toDoElement > label {
+	padding-left: 10px;
+}
+
+.search-bar {
+	width: 90%;
+	height: 30px;
+	margin-inline: 20px;
+}
+
+.search-bar::placeholder {
+	padding-left: 10px;
+}
+
+/* Footer */
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	background-color: #f5fde8;
+}
+
+.footer-group1,
+.footer-group2 {
+	display: flex;
+	width: 40%;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+/* * {
+	border: 1px solid red;
+} */
+
+.footer-group1 > p {
+	padding-inline: 5px;
+	margin-left: 20px;
+	/* overflow: hidden; */
+}
+
+.footer-group2 > button {
+	height: 30px;
+	margin-inline: 5px;
+	background-color: transparent;
+	border: none;
+}
+
+.footer-group2 > button {
+	height: 30px;
+	margin-inline: 5px;
+	background-color: transparent;
+	border: none;
+}
+
+.items {
+	font-size: 12px;
+}
+
+.shown {
+	display: none;
+}
+
+.footer-item {
+	cursor: pointer;
+}
