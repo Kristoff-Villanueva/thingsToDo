@@ -6,7 +6,6 @@ function ToDo(props) {
 	const [inputText, setInputText] = React.useState([]);
 	const [newInput, setNewInput] = React.useState("");
 	const [searchText, setSearchText] = React.useState([]);
-	// const [searching, setSearching] = React.useState(false);
 	const inputRef = React.useRef();
 	React.useEffect(() => {
 		props.setListCount(inputText.length);
@@ -16,9 +15,12 @@ function ToDo(props) {
 
 	const toDoElements = inputText.map((el) => {
 		return (
-			<div className="toDoElement" key={nanoid()}>
+			<div id={el} className="toDoElement" key={nanoid()}>
 				<input type="checkbox" name="" id={el} />
 				<label htmlFor={el}>{el}</label>
+				<p onClick={handleDelete} className="delete">
+					❌
+				</p>
 			</div>
 		);
 	});
@@ -33,6 +35,13 @@ function ToDo(props) {
 	});
 
 	// functions
+
+	function handleDelete(event) {
+		const toDeleteElement = event.target.parentElement.id;
+		setInputText((prevInputText) => {
+			return prevInputText.filter((item) => item !== toDeleteElement);
+		});
+	}
 
 	function handleChange(event) {
 		setNewInput(event.target.value);
@@ -57,6 +66,7 @@ function ToDo(props) {
 			<h1>Things To Do</h1>
 			{props.displayInput && (
 				<input
+					autoFocus
 					ref={inputRef}
 					type="text"
 					onChange={handleChange}
@@ -67,6 +77,7 @@ function ToDo(props) {
 			)}
 			{props.displaySearch && (
 				<input
+					autoFocus
 					type="text"
 					placeholder="Search"
 					className="search-bar"
