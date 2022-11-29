@@ -21,7 +21,9 @@ function Footer(props) {
 				<p className="footer-item" onClick={handleSearchClick}>
 					🔍
 				</p>
-				<p className="items">{props.listCount} item/s left</p>
+				<p className="items">
+					{props.listCount} item{props.listCount > 1 ? "s" : ""} left
+				</p>
 			</div>
 
 			<div className="footer-group2">

@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+/
 }
 
 body {
@@ -16,9 +17,11 @@ body {
 	/* padding: 10px 20px; */
 	width: 500px;
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 	flex-direction: column;
 	border-radius: 5px;
+	min-height: 200px;
+	position: relative;
 }
 
 .toDo {
@@ -43,13 +46,15 @@ h1 {
 }
 
 .toDoElement > label {
-	padding-left: 10px;
+	margin-left: 10px;
+	padding: 0px 2px
 }
 
 .search-bar {
-	width: 90%;
+	width: 92%;
 	height: 30px;
 	margin-inline: 20px;
+	border-radius: 3px;
 }
 
 .search-bar::placeholder {
@@ -63,6 +68,10 @@ h1 {
 	justify-content: space-between;
 	background-color: #f5fde8;
 	border-radius: 0 0 5px 5px;
+	/* position: absolute;
+	bottom: 0; */
+	width: 100%;
+	margin-top: auto;
 }
 
 .footer-group1,
@@ -90,7 +99,7 @@ h1 {
 	height: 30px;
 	margin-inline: 5px;
 	background-color: transparent;
-	border: none;
+	border: 1px solid transparent;
 }
 
 .items {
@@ -121,12 +130,32 @@ h1 {
 	margin-left: auto;
 }
 
+.edit {
+	margin-left: 0;
+	filter: grayscale(100%);
+	opacity: 0.5;
+}
+
+.edit:hover {
+	cursor: pointer;
+}
+
 .delete:hover {
 	filter: none;
 	opacity: 1;
 	cursor: pointer;
 }
 
-/* * {
-	border: 1px solid red;
-} */
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.div-icon {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+label::spelling-error {
+	text-decoration: none;
+}
